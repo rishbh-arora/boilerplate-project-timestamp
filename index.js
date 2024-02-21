@@ -49,9 +49,13 @@ app.get("/api", (req, res) => {
   const date = new Date();
   res.json({
     unix: date.getTime(),
-    utc: date.toString()
+    utc: date.toUTCString()
   })
 });
+
+app.get("/headers",(req,res) => {
+  res.json(req.headers);
+})
 
 
 
